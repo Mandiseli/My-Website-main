@@ -197,7 +197,7 @@ span {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 5rem;
 }
 
 .services-container .services-box{
@@ -522,19 +522,19 @@ span {
     padding: 80px 13%;
 
 }
-.skill-head{
+.heading{
     width: 100%;
     margin-bottom: 70px;
     display: grid;
     place-items: center;
     text-align: center;
 }
-.skill-head h2{
+.heading h2{
     margin-bottom: -5px;
     font-size: 4.5rem;
 }
 
-.skill-head p {
+.skill-section p {
     font-size: 1.7rem;
 }
 .skill-head h2 span{
