@@ -623,40 +623,40 @@ form .textarea-field .error-txt{
     border-radius: 25px;
 }
 .skill-bar .bar .html{
-    width: 90%;
+    width: 60%;
     animation: html 3s;
 }
 @keyframes html{
     0%{
         width: 0;
     }100%{
-        width: 90%;
+        width: 60%;
     } 
 }
 .skill-bar .bar .css{
-    width: 90%;
+    width: 60%;
     animation: css 3s;
 }
 @keyframes css{
     0%{
         width: 0;
     }100%{
-        width: 90%;
+        width: 60%;
     } 
 }
 .skill-bar .bar .js{
-    width: 90%;
+    width: 40%;
     animation: js 3s;
 }
 @keyframes js{
     0%{
         width: 0;
     }100%{
-        width: 70%;
+        width: 40%;
     } 
 }
 .skill-bar .bar .java{
-    width: 90%;
+    width: 40%;
     animation: java 3s;
 }
 @keyframes java{
@@ -667,25 +667,25 @@ form .textarea-field .error-txt{
     } 
 }
 .skill-bar .bar .python{
-    width: 90%;
+    width: 60%;
     animation: python 3s;
 }
 @keyframes python{
     0%{
         width: 0;
     }100%{
-        width: 30%;
+        width: 60%;
     } 
 }
 .skill-bar .bar .vb{
-    width: 90%;
+    width: 50%;
     animation: vb 3s;
 }
 @keyframes vb{
     0%{
         width: 0;
     }100%{
-        width: 70%;
+        width: 50%;
     } 
 }
 
