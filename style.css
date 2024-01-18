@@ -56,6 +56,20 @@ section{
     font-weight: 600;
     cursor: default;
 }
+.navbar{
+    /*position: absolute;*/
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem 3%;
+    background-color: var(--bg-color);
+    border-top: .1rem solid rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2) ;
+    /*display: none;*/
+}
+.navbar.active{
+    display: block;
+}
 
 .navbar a{
     font-size: 1.7rem;
@@ -64,7 +78,8 @@ section{
     transition: .3s;
 }
 
-.navbar a:hover, .navbar a.active{
+.navbar a:hover, 
+.navbar a.active{
     color: var(--main-color);
 }
 
@@ -76,11 +91,11 @@ section{
 
 .home{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 .home-img img{
-    width: 35vw;
+    width: 30vw;
     animation: floatImage 4s ease-in-out infinite;
 }
 
@@ -125,11 +140,12 @@ span {
     align-items: center;
     width: 4rem;
     height: 4rem;
-    background: var(--bg-color);
-    border: 2rem solid var(--main-color);
+    background: transparent;
+    border: .2rem solid var(--main-color);
     border-radius: 50%;
     font-size: 2rem;
-    color: var(--second-bg-color);
+    color: var(--main-color);
+    text-decoration: none;
     margin: 3rem 1.5rem 3rem 0;
     transition: .5s ease;
 }
@@ -286,6 +302,8 @@ span {
 
 .portfolio-layer h4{
     font-size: 3rem;
+    
+    
 }
 
 .portfolio-layer p{
@@ -307,45 +325,78 @@ span {
     color: var(--second-bg-color);
 }
 
+
+
 .contact h2{
-    margin-bottom: 3rem;
+    font-size: 40px;
+    color: #ededed;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 .contact form{
     max-width: 70rem;
+    width: 600;
     margin: 1rem auto;
     text-align: center;
     margin-bottom: 3rem;
+
 }
 
-.contact form .input-box{
+form .input-box{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.contact form .input-box input,
-.contact form textarea{
-    width: 100%;
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    color: var(--text-color);
-    background: var(--second-bg-color);
-    border-radius: .8rem;
-    margin: .7rem 0;
-}
-
-.contact form .input-box input {
-    width: 49%;
-}
-
-.contact form textarea{
-    resize: none;
-}
-
 .contact form .btn{
     margin-top: 2rem;
     cursor: pointer;
+}
+
+.input-box .input-field{
+    width: 45.5%;
+}
+
+.field .item{
+    width: 100%;
+    padding: 18px;
+    background: transparent;
+    border: 2px solid #0ef;
+    outline: none;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #ededed;
+    margin: 12px 0;
+}
+
+.field.error .item{
+    border-color: #d93025;
+
+}
+
+.field .item::placeholder{
+    color: rgba(255, 255, 255, .3);
+}
+
+.field .error-txt{
+    font-size: 14.5px;
+    color: #d93025;
+    text-align: left;
+    margin: -5px 0 10px;
+    display: none;
+}
+
+.field.error .error-txt{
+    display: block;
+}
+
+form .textarea-field .item{
+    resize: none;
+}
+
+form .textarea-field .error-txt{
+    margin-top: -10px;
 }
 
 .footer{
@@ -516,7 +567,7 @@ span {
 }
 
 /*skills*/
-#skill-section{
+.skill-section{
     width: 100%;
     height: auto;
     padding: 80px 13%;

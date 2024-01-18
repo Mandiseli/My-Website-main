@@ -1,7 +1,7 @@
 
 /*############ toggle icon navbar ############*/
 let menuIcon = document.querySelector('#menu-icon');
-let navbar = document.querySelector('.navba');
+let navbar = document.querySelector('.navbar');
 
 menuIcon.onclick = () =>{
     menuIcon.classList.toggle('bx-x');
@@ -62,75 +62,16 @@ const typed = new Typed('.multiple-text', {
     loop: true
 });
 
-/*###################Form Validation####################*/
-/*function validateForm() {
-    const fullName = document.getElementById("fullName").value;
-    const email = document.getElementById("email").value;
-    const mobileNumber = document.getElementById("mobileNumber").value;
-    const emailSubject = document.getElementById("emailSubject").value;
-    const message = document.getElementById("message").value;
-
-    const fullNameError = document.getElementById("fullNameError");
-    const emailError = document.getElementById("emailError");
-    const mobileNumberError = document.getElementById("mobileNumberError");
-    const emailSubjectError = document.getElementById("emailSubjectError");
-    const messageError = document.getElementById("messageError");
-
-    fullNameError.textContent = "";
-    emailError.textContent = "";
-    mobileNumberError.textContent = "";
-    emailSubjectError.textContent = "";
-    messageError.textContent = "";
-
-    let isValid = true;
-
-    if (fullName.trim() === "") {
-        fullNameError.textContent = "Full Name is required";
-        isValid = false;
-    }
-
-    if (email.trim() === "") {
-        emailError.textContent = "Email Address is required";
-        isValid = false;
-    } else if (!isValidEmail(email)) {
-        emailError.textContent = "Invalid email format";
-        isValid = false;
-    }
-
-    if (mobileNumber.trim() === "") {
-        mobileNumberError.textContent = "Mobile Number is required";
-        isValid = false;
-    }
-
-    if (emailSubject.trim() === "") {
-        emailSubjectError.textContent = "Email Subject is required";
-        isValid = false;
-    }
-
-    if (message.trim() === "") {
-        messageError.textContent = "Your Message is required";
-        isValid = false;
-    }
-
-    return isValid;
-}
-
-function isValidEmail(email) {
-    // Basic email format validation, you can add more checks if needed.
-    const emailRegex = /\S+@\S+\.\S+/;
-    return emailRegex.test(email);
-}*/
+/*************************Send Email********************************/
 
 const form = document.querySelector('form');
-
+const fullName = document.getElementById('fullName');
+const email = document.getElementById('email');
+const phone = document.getElementById('mobileNumber');
+const subject = document.getElementById('emailSubject');
+const mess = document.getElementById('message');
 
 function sendEmail(){
-    const fullName = document.getElementById('fullName');
-    const email = document.getElementById('email');
-    const phone = document.getElementById('mobileNumber');
-    const subject = document.getElementById('emailSubject');
-    const mess = document.getElementById('message');
-
     const bodyMessage = `Full Name: ${fullName.value}<br> Email: ${email.value}<br> Mobile Number: ${mobileNumber.value}<br> Email Subject: ${emailSubject.value}<br> Message: ${message.value}`;
 
     
@@ -157,91 +98,74 @@ function sendEmail(){
 }
 
 function checkInputs(){
-    const fullName = document.getElementById('fullName');
-    const email = document.getElementById('email');
-    const phone = document.getElementById('mobileNumber');
-    const subject = document.getElementById('emailSubject');
-    const mess = document.getElementById('message'); 
+    const items = document.querySelectorAll(".item");
 
-    const items = document.querySelectorAll(".error");
-
-    for(const error of items){
-        if(error.previousElementSibling.value === ""){
-            error.textContent = "This field is required"
-            error.parentElement.classList.add("error");
-        } else{
-            error.textContent = "";
-            error.parentElement.classList.remove("error");
-
+    for(const item of items){
+        if(item.value == ""){
+            item.classList.add("error");
+            item.parentElement.classList.add("error");
         }
 
-        /*if(items[1].value != ""){
+        if(items[1].value != ""){
             checkEmail();
-        }*/
+        }
 
-        /*items[1].addEventListener("keyup", () =>{
+        items[1].addEventListener("keyup", () =>{
             checkEmail();
         });
 
-        error.addEventListener("keyup", () => {
-            if(error.value != ""){
-                error.classList.remove("error");
-                error.parentElement.classList.remove("error");
+        item.addEventListener("keyup", () => {
+            if(item.value != ""){
+                item.classList.remove("error");
+                item.parentElement.classList.remove("error");
             }
             else{
-                error.classList.add("error");
-                error.parentElement.classList.add("error");
+                item.classList.add("error");
+                item.parentElement.classList.add("error");
             }
-        });*/
+        });
     }
 }
 
 function checkEmail(){
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    const errorTxtEmail = document.querySelectorAll(".emailError.email");
+    const errorTxtEmail = document.querySelectorAll(".error-txt.email");
 
 
     if(!email.value.match(emailRegex)){
         email.classList.add("error");
-        email.nextElementSibling.textContent = "Enter a valid email address";
-        /*if (email.value != ""){
+        email.parentElement.classList.add("error");
+
+        if (email.value != ""){
             errorTxtEmail.innerText = "Enter a valid email address";
-        }*/
-    }
+        }
         else{
-            email.classList.remove("error");
-            email.nextElementSibling.textContent = "";
+            errorTxtEmail.innerText = "Email address can't be blank";
 
         }
 
     }
-    /*else{
+    else{
         email.classList.remove("error");
         email.parentElement.classList.remove("error");
 
-    }*/
+    }
 
-
+}
 
 form.addEventListener("submit", (e) =>{
     e.preventDefault();
     checkInputs();
 
-    const fullName = document.getElementById('fullName');
-    const email = document.getElementById('email');
-    const mobileNumber = document.getElementById('mobileNumber');
-    const emailSubject = document.getElementById('emailSubject');
-    const message = document.getElementById('message');
-
-    if(!fullName.classList.contains("error") && !email.classList.contains("error") && !mobileNumber.classList.contains("error") && !emailSubjectsubject.classList.contains("error") && !message.classList.contains("error")){
+    if(!fullName.classList.contains("error") && !email.classList.contains("error") && !phone.classList.contains("error") && !subject.classList.contains("error") && !mess.classList.contains("error")){
         sendEmail();
+
         form.reset();
-        //return false
+        return false
     }
 
 
-});
-
+})
 
 
 

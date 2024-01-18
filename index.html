@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mandiseli Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+   
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Custom CSS-->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
    <header class="header">
@@ -20,7 +23,7 @@
             <a href="#services">Services</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#skills">Skills</a>
-            <a href="#Edu&Exp">Edu & Exp</a>
+            <a href="#Education">Education</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -42,10 +45,11 @@
             <h3>And I'm a <span class="multiple-text">Software Developer</span></h3>
             <p>This is my official portfolio website to show all my <br> Details and work Experience</p>
             <div class="social-media">
-                <a href="#"><box-icon type='logo' name='linkedin-square'></box-icon></a>
-                <a href="https://github.com/Mandiseli"><box-icon type='logo' name='github'></box-icon></a>
-                <a href="#"><box-icon name='instagram' type='logo' ></box-icon></a>
-                <a href="#"><box-icon name='facebook' type='logo' ></box-icon></a>
+                <!--<a href="#"><i class='bx-fw bx bxl-facebook'></i></a>-->
+                <a href="https://github.com/Mandiseli"><i class='bx-fw bx bxl-github'></i></a>
+                <a href="www.linkedin.com/in/mandiseli-mfeya-357491261"><i class='bx-fw bx bxl-linkedin'></i></a>
+                <a href="#"><i class='bx-fw bx bxl-instagram'></i></a>
+            
             </div>
             <a href="#" class="btn">Download CV</a>
 
@@ -160,7 +164,7 @@
    
 
     <!-- Skills Section -->
-    <section id="skill-section">
+    <section class="skill-section" id="skill-section">
         <h2 class="heading">My<span>Skills</span></h2>
         <h3>Here is my skill to represent my Expertise</h3>
         <!--<div class="skill-head">
@@ -225,7 +229,7 @@
     </section>
 
     <!--Education and Experience Section-->
-    <section id="edu-exp">
+    <section class="edu-exp" id="edu-exp">
         <h2 class="heading">Education &<span>Experience</span></h2>
         
 
@@ -284,26 +288,31 @@
         
                 </section>
         
-                <!-- ******* Experience Section Ends ******* -->
-                <!--***********Contact Session***************-->
+                
 
                 <section class="contact" id="contact">
                     <h2 class="heading">Contact <span>Me!</span></h2>
-                    <form action="#" onsubmit="return validateForm()">
+                    <form action="#">
                         <div class="input-box">
-                            <input type="text" id="fullName" placeholder="Full Name">
-                            <span id="fullNameError" class="error"></span>
-                            <input type="email" id="email" placeholder="Email Address">
-                            <span id="emailError" class="error"></span>
+                            <div class="input-field field">
+                                <input type="text" placeholder="Full Name" id="fullName" class="item" autocomplete="off">
+                                <div class="error-txt">Full Name can't be blank</div>
+                                <input type="text" placeholder="Email Address" id="email" class="item" autocomplete="off">
+                                <div class="error-txt">Email can't be blank</div>
+                            </div>
+                            <div class="input-field field">
+                                <input type="text" placeholder="Mobile Number" id="mobileNumber" class="item" autocomplete="off">
+                                <div class="error-txt">Mobile number can't be blank</div>
+                                <input type="text" placeholder="Email Subject" id="emailSubject" class="item" autocomplete="off">
+                                <div class="error-txt">Subject can't be blank</div>
+                            </div>
+    
                         </div>
-                        <div class="input-box">
-                            <input type="tel" id="mobileNumber" placeholder="Mobile Number">
-                            <span id="mobileNumberError" class="error"></span>
-                            <input type="text" id="emailSubject" placeholder="Email Subject">
-                            <span id="emailSubjectError" class="error"></span>
+                       
+                        <div class="textarea-field field">
+                            <textarea name="" id="message" cols="30" rows="10" placeholder="Your Message" class="item" autocomplete="off"></textarea>
+                            <div class="error-txt">Message can't be blank</div>
                         </div>
-                        <textarea id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
-                        <span id="messageError" class="error"></span>
                         <input type="submit" value="Send Message" class="btn"> 
                     </form>
                 </section>
@@ -324,6 +333,8 @@
         </div>
         
     </footer>
+
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
     <!--scroll reveal-->
     <script src="https://unpkg.com/scrollreveal"></script>
